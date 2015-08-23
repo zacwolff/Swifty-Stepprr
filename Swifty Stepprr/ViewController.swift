@@ -13,6 +13,7 @@ class ViewController: UIViewController, UITextFieldDelegate
     @IBOutlet weak var minusButton: UIButton!
     @IBOutlet weak var plusButton: UIButton!
     @IBOutlet weak var amountTextField: UITextField!
+    @IBOutlet weak var tapToEditLabel: UILabel!
 
     var tempStepperValue = 0
     var value = 0
@@ -59,6 +60,7 @@ class ViewController: UIViewController, UITextFieldDelegate
     
     func textFieldDidBeginEditing(textField: UITextField) {
         amountTextField.text = ""
+        tapToEditLabel.hidden = true
     }
     
     func textFieldDidEndEditing(textField: UITextField) {
