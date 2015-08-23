@@ -14,7 +14,7 @@ class ViewController: UIViewController, UITextFieldDelegate
     @IBOutlet weak var plusButton: UIButton!
     @IBOutlet weak var amountTextField: UITextField!
 
-    
+    var tempStepperValue = 0
     var value = 0
     {
         didSet
@@ -26,6 +26,8 @@ class ViewController: UIViewController, UITextFieldDelegate
     override func viewDidLoad()
     {
         super.viewDidLoad()
+        //you can do this in storyboard too
+        amountTextField.delegate = self
     }
 
     override func didReceiveMemoryWarning()
@@ -35,12 +37,32 @@ class ViewController: UIViewController, UITextFieldDelegate
     
     @IBAction func minusButton(sender: AnyObject)
     {
-        value -= 1
+        amountTextField.resignFirstResponder()
+        if tempStepperValue != 0 {
+            value -= tempStepperValue
+            tempStepperValue = 0
+        } else {
+            value -= 1
+        }
     }
     
     @IBAction func plusButton(sender: AnyObject)
     {
-        value += 1
+        amountTextField.resignFirstResponder()
+        if tempStepperValue != 0 {
+            value += tempStepperValue
+            tempStepperValue = 0
+        } else {
+            value += 1
+        }
+    }
+    
+    func textFieldDidBeginEditing(textField: UITextField) {
+        amountTextField.text = ""
+    }
+    
+    func textFieldDidEndEditing(textField: UITextField) {
+        tempStepperValue = amountTextField.text.toInt() ?? 0
     }
     
     func textFieldShouldReturn(textField: UITextField) -> Bool
@@ -51,7 +73,7 @@ class ViewController: UIViewController, UITextFieldDelegate
     
     override func touchesBegan(touches: Set<NSObject>, withEvent event: UIEvent)
     {
-        view.endEditing(true)        
+        view.endEditing(true)
     }
     
 
