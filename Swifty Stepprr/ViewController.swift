@@ -13,21 +13,19 @@ class ViewController: UIViewController, UITextFieldDelegate
     @IBOutlet weak var minusButton: UIButton!
     @IBOutlet weak var plusButton: UIButton!
     @IBOutlet weak var amountTextField: UITextField!
-    @IBOutlet weak var tapToEditLabel: UILabel!
 
-    var tempStepperValue = 0
     var value = 0
-    {
+        {
         didSet
         {
-            amountTextField.text = String(value)
+            amountTextField.text = "\(value)"
         }
     }
 
     override func viewDidLoad()
     {
         super.viewDidLoad()
-        //you can do this in storyboard too
+
         amountTextField.delegate = self
     }
 
@@ -38,33 +36,29 @@ class ViewController: UIViewController, UITextFieldDelegate
     
     @IBAction func minusButton(sender: AnyObject)
     {
-        amountTextField.resignFirstResponder()
-        if tempStepperValue != 0 {
-            value -= tempStepperValue
-            tempStepperValue = 0
-        } else {
+        if value == 1
+        {
+            amountTextField.backgroundColor = UIColor(red:0.94, green:0.52, blue:0.5, alpha:1)
+        }
+        else
+        {
+            print("Substraction succeeded")
             value -= 1
+            amountTextField.backgroundColor = UIColor(red:0.89, green:0.92, blue:0.89, alpha:1)
         }
     }
     
     @IBAction func plusButton(sender: AnyObject)
     {
-        amountTextField.resignFirstResponder()
-        if tempStepperValue != 0 {
-            value += tempStepperValue
-            tempStepperValue = 0
-        } else {
-            value += 1
-        }
+        value += 1
+        amountTextField.backgroundColor = UIColor(red:0.89, green:0.92, blue:0.89, alpha:1)
     }
-    
-    func textFieldDidBeginEditing(textField: UITextField) {
-        amountTextField.text = ""
-        tapToEditLabel.hidden = true
-    }
-    
-    func textFieldDidEndEditing(textField: UITextField) {
-        tempStepperValue = amountTextField.text.toInt() ?? 0
+        
+    func textFieldDidEndEditing(textField: UITextField)
+    {
+        amountTextField.backgroundColor = UIColor(red:0.89, green:0.92, blue:0.89, alpha:1)
+
+        value = Int(amountTextField.text!)!
     }
     
     func textFieldShouldReturn(textField: UITextField) -> Bool
@@ -73,10 +67,24 @@ class ViewController: UIViewController, UITextFieldDelegate
         return true
     }
     
-    override func touchesBegan(touches: Set<NSObject>, withEvent event: UIEvent)
+    override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?)
     {
         view.endEditing(true)
     }
     
+    func textField(textField: UITextField, shouldChangeCharactersInRange range: NSRange, replacementString string: String) -> Bool
+    {
+        if value == 0
+        {
+            amountTextField.backgroundColor = UIColor(red:0.94, green:0.52, blue:0.5, alpha:1)
+        }
+        else
+        {
+            amountTextField.backgroundColor = UIColor(red:0.89, green:0.92, blue:0.89, alpha:1)
+        }
+        
+        return true
+    }
+   
 
 }

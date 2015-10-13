@@ -156,6 +156,8 @@
 		5E928C191B8939040087BAA7 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				LastSwiftMigration = 0700;
+				LastSwiftUpdateCheck = 0700;
 				LastUpgradeCheck = 0640;
 				ORGANIZATIONNAME = "Zac Wolff";
 				TargetAttributes = {
@@ -411,6 +413,7 @@
 				5E928C421B8939040087BAA7 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		5E928C431B8939040087BAA7 /* Build configuration list for PBXNativeTarget "Swifty StepprrTests" */ = {
 			isa = XCConfigurationList;
@@ -419,6 +422,7 @@
 				5E928C451B8939040087BAA7 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

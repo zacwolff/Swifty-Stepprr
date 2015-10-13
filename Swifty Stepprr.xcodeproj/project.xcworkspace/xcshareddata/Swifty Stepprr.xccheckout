@@ -7,21 +7,21 @@
 	<key>IDESourceControlProjectIdentifier</key>
 	<string>949C7875-F750-44D4-82D3-FE5870977B56</string>
 	<key>IDESourceControlProjectName</key>
-	<string>Swifty Stepprr</string>
+	<string>project</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
 	<dict>
 		<key>7668525481589C5BE993EA078D9A1CBA6BD3A319</key>
-		<string>https://github.com/deltadavid/Swifty-Stepprr.git</string>
+		<string>https://github.com/zacwolff/Swifty-Stepprr.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
-	<string>Swifty Stepprr.xcodeproj</string>
+	<string>Swifty Stepprr.xcodeproj/project.xcworkspace</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
 		<key>7668525481589C5BE993EA078D9A1CBA6BD3A319</key>
 		<string>../..</string>
 	</dict>
 	<key>IDESourceControlProjectURL</key>
-	<string>https://github.com/deltadavid/Swifty-Stepprr.git</string>
+	<string>https://github.com/zacwolff/Swifty-Stepprr.git</string>
 	<key>IDESourceControlProjectVersion</key>
 	<integer>111</integer>
 	<key>IDESourceControlProjectWCCIdentifier</key>
